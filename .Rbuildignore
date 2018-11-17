@@ -1,3 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 test.R
+^\.travis\.yml$
+^README\.Rmd$
+^README-.*\.png$
