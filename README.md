@@ -7,7 +7,7 @@ Status](https://travis-ci.org/andrewthomasjones/SSOSVM.svg?branch=master)](https
 
 # SSOSVM
 
-The goal of SSOSVM is to …
+The goal of SSOSVM is to
 
 ## Installation
 
