@@ -30,8 +30,5 @@ Maintainer: \packageMaintainer{SSOSVM}
  \code{\link[<pkg>:<pkg>-package]{<pkg>}} 
 }
 \examples{
-<<<<<<< HEAD
-=======
- simple examples of the most important functions 
->>>>>>> ebdbe5e4db4aa38a4fa641a63f6cc13361f567f6
+
 }
