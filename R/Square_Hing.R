@@ -1,3 +1,7 @@
+#'@importFrom grDevices gray
+#'@importFrom graphics image
+NULL
+
 
 generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   if(!is.null(seed)){set.seed(seed)}
