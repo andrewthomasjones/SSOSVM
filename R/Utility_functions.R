@@ -12,14 +12,13 @@ NULL
 #'@importFrom graphics image
 NULL
 
-
-###########################################
-# YMAT <- generateSim(10^4)
-# sq1<-SquareHinge(YMAT$YMAT,returnAll =T)
-# h1<-Hinge(YMAT$YMAT,returnAll =T)
-# l1<-Logistic(YMAT$YMAT,returnAll =T)
-############################################
-
+#'TITLE
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
+#'@export
 generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   if(!is.null(seed)){set.seed(seed)}
   # Simulation
@@ -35,12 +34,27 @@ generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   return(list(YMAT=YMAT, XX=XX, YY=YY))
 }
 
+
 # helper function for visualization
+#'TITLE
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
+#'@export
 show_digit = function(arr784, col = gray(12:1 / 12), ...) {
   image(matrix(as.matrix(arr784[-785]), nrow = 28)[, 28:1], col = col, ...)
 }
 
 # load image files
+#'TITLE
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
+#'@export
 load_image_file = function(filename) {
   ret = list()
   f = file(filename, 'rb')
@@ -54,6 +68,13 @@ load_image_file = function(filename) {
 }
 
 # load label files
+#'TITLE
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
+#'@export
 load_label_file = function(filename) {
   f = file(filename, 'rb')
   readBin(f, 'integer', n = 1, size = 4, endian = 'big')

@@ -6,6 +6,7 @@
 
 #include "RcppArmadillo.h"
 
+//conversion for export
 Rcpp::NumericVector export_vec(arma::vec y)
 {
   Rcpp::NumericVector tmp = Rcpp::wrap(y);
@@ -13,6 +14,7 @@ Rcpp::NumericVector export_vec(arma::vec y)
   return tmp;
 }
 
+//intermediate values in loss functions see <doi:10.1007/s42081-018-0001-y>
 double psiFun(arma::vec THETA,  arma::rowvec Yrow, double EPSILON ){
   double psi_temp = std::pow(std::sqrt(std::pow(1-arma::dot(THETA,Yrow),2.0)+EPSILON)+1-arma::dot(THETA,Yrow),2.0)/(2*std::sqrt(std::pow(1-arma::dot(THETA,Yrow),2.0)+EPSILON));
   return(psi_temp);
@@ -28,8 +30,12 @@ double omegaFun(arma::vec THETA,  arma::rowvec Yrow, double EPSILON ){
   return(omega_temp);
 }
 
-
-
+//'Square Hinge
+//'@description THIS FUNCTION DOES
+//'@param PARAM1
+//'@param PARAM2
+//'@return RETURNVAL
+//'@examples
 //'@export
 // [[Rcpp::export]]
 Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -118,6 +124,12 @@ Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, 
 
 
 
+//'Hinge
+//'@description THIS FUNCTION DOES
+//'@param PARAM1
+//'@param PARAM2
+//'@return RETURNVAL
+//'@examples
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -184,6 +196,12 @@ Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool r
   return(retList);
 }
 
+//'Logistic
+//'@description THIS FUNCTION DOES
+//'@param PARAM1
+//'@param PARAM2
+//'@return RETURNVAL
+//'@examples
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Logistic(arma::mat& YMAT, int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {

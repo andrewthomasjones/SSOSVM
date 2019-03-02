@@ -5,16 +5,34 @@
 #'@useDynLib SSOSVM
 NULL
 
+#'Square Hinge
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
 #'@export
 SquareHinge <- function(YMAT, DIM = 2L, EPSILON = 0.00001, returnAll = FALSE, rho = 1.0) {
     .Call('_SSOSVM_SquareHinge', PACKAGE = 'SSOSVM', YMAT, DIM, EPSILON, returnAll, rho)
 }
 
+#'Hinge
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
 #'@export
 Hinge <- function(YMAT, DIM = 2L, EPSILON = 0.00001, returnAll = FALSE, rho = 1.0) {
     .Call('_SSOSVM_Hinge', PACKAGE = 'SSOSVM', YMAT, DIM, EPSILON, returnAll, rho)
 }
 
+#'Logistic
+#'@description THIS FUNCTION DOES
+#'@param PARAM1
+#'@param PARAM2
+#'@return RETURNVAL
+#'@examples
 #'@export
 Logistic <- function(YMAT, DIM = 2L, EPSILON = 0.00001, returnAll = FALSE, rho = 1.0) {
     .Call('_SSOSVM_Logistic', PACKAGE = 'SSOSVM', YMAT, DIM, EPSILON, returnAll, rho)
