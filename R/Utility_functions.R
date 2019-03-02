@@ -1,6 +1,6 @@
 #'SSOSVM: A package for online training of soft-margin support vector machines (SVMs) using the Stochastic majorization–minimization (SMM) algorithm.
 #'
-#'The SSOSVM package allows for computation 
+#'The SSOSVM package allows for computation...
 #'
 #'@author Andrew T. Jones,  Hien D. Nguyen, Geoffrey J. McLachlan
 #'@references  Hien D. Nguyen, Andrew T. Jones and Geoffrey J. McLachlan. (2018). Stream-suitable optimization algorithms for some soft-margin support vector machine variants, Japanese Journal of Statistics and Data Science, vol. 1, Issue 1, pp. 81-108. 
@@ -12,6 +12,13 @@ NULL
 #'@importFrom graphics image
 NULL
 
+
+###########################################
+# YMAT <- generateSim(10^4)
+# sq1<-SquareHinge(YMAT$YMAT,returnAll =T)
+# h1<-Hinge(YMAT$YMAT,returnAll =T)
+# l1<-Logistic(YMAT$YMAT,returnAll =T)
+############################################
 
 generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   if(!is.null(seed)){set.seed(seed)}
