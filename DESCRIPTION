@@ -10,9 +10,7 @@ License: GPL-3
 Encoding: UTF-8
 Imports: Rcpp (>= 0.12.13),
     mvtnorm,
-    MASS,
-    grDevices,
-    graphics
+    MASS
 LinkingTo: Rcpp,
     RcppArmadillo
 RoxygenNote: 6.1.1
