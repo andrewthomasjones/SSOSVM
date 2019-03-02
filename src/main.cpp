@@ -31,11 +31,21 @@ double omegaFun(arma::vec THETA,  arma::rowvec Yrow, double EPSILON ){
 }
 
 //'Square Hinge
-//'@description THIS FUNCTION DOES
-//'@param PARAM1
-//'@param PARAM2
-//'@return RETURNVAL
+//'@description Fit SVM with Square Hinge loss function.
+//'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
+//'@param DIM Dimesion of data. Default value is 2.
+//'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
+//'@param returnAll Return all of theta values? Boolean with default value FALSE.
+//'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0
+//'@return A list containing:
+//'\item{THETA}{SVM fit parameters.}
+//'\item{NN}{Number of observation points in YMAT.}
+//'\item{DIM}{Dimension of data.}
+//'\item{THETA_list}{THETA at each iteration (new point observed) as YMAT is fed into the algorithm one data point at a time.}
+//'\item{PSI}{Intermediate value PSI at each iteration (new point observed).}
 //'@examples
+//'YMAT <- generateSim(10^3,DIM=3)
+//'sq1<-SquareHinge(YMAT$YMAT, DIM=3, returnAll =T)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -125,11 +135,21 @@ Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, 
 
 
 //'Hinge
-//'@description THIS FUNCTION DOES
-//'@param PARAM1
-//'@param PARAM2
-//'@return RETURNVAL
+//'@description Fit SVM with Hinge loss function.
+//'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
+//'@param DIM Dimesion of data. Default value is 2.
+//'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
+//'@param returnAll Return all of theta values? Boolean with default value FALSE.
+//'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0
+//'@return A list containing:
+//'\item{THETA}{SVM fit parameters.}
+//'\item{NN}{Number of observation points in YMAT.}
+//'\item{DIM}{Dimension of data.}
+//'\item{THETA_list}{THETA at each iteration (new point observed) as YMAT is fed into the algorithm one data point at a time.}
+//'\item{OMEGA}{Intermediate value OMEGA at each iteration (new point observed).}
 //'@examples
+//'YMAT <- generateSim(10^4)
+//'h1<-Hinge(YMAT$YMAT,returnAll =T)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -196,12 +216,22 @@ Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool r
   return(retList);
 }
 
-//'Logistic
-//'@description THIS FUNCTION DOES
-//'@param PARAM1
-//'@param PARAM2
-//'@return RETURNVAL
+//'Logistic Loss Function
+//'@description Fit SVM with Logistic loss function.
+//'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
+//'@param DIM Dimesion of data. Default value is 2.
+//'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
+//'@param returnAll Return all of theta values? Boolean with default value FALSE.
+//'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0
+//'@return A list containing:
+//'\item{THETA}{SVM fit parameters.}
+//'\item{NN}{Number of observation points in YMAT.}
+//'\item{DIM}{Dimension of data.}
+//'\item{THETA_list}{THETA at each iteration (new point observed) as YMAT is fed into the algorithm one data point at a time.}
+//'\item{CHI}{Intermediate value CHI at each iteration (new point observed).}
 //'@examples
+//'YMAT <- generateSim(10^4)
+//'l1<-Logistic(YMAT$YMAT,returnAll =T)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Logistic(arma::mat& YMAT, int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
