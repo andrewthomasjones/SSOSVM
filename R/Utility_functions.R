@@ -35,7 +35,7 @@ generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   XX <- XX[SAMPLE,]
   YY <- c(rep(-1,round(NN/2)),rep(1,NN-round(NN/2)))
   YY <- YY[SAMPLE]
-  YMAT <- cbind(YY,YY*XX)
+  YMAT <- cbind(YY,XX)
   
   return(list(XX=XX, YY=YY,YMAT=YMAT))
 }
