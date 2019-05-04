@@ -6,7 +6,9 @@
 \alias{SSOSVM-package}
 \title{SSOSVM: A package for online training of soft-margin support vector machines (SVMs) using the Stochastic majorization–minimization (SMM) algorithm.}
 \description{
-The SSOSVM package allows for computation...
+The SSOSVM package allows for the online training of Soft-margin support vector machines (SVMs) using the Stochastic majorization–minimization (SMM) algorithm.
+\code{SquareHinge},\code{Hinge} and \code{Logistic} 
+The function \code{generateSim} can also be used to generate simple test sets.
 }
 \references{
 Hien D. Nguyen, Andrew T. Jones and Geoffrey J. McLachlan. (2018). Stream-suitable optimization algorithms for some soft-margin support vector machine variants, Japanese Journal of Statistics and Data Science, vol. 1, Issue 1, pp. 81-108.

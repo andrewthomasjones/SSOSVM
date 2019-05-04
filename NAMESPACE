@@ -2,12 +2,8 @@
 
 export(Hinge)
 export(Logistic)
+export(SVMFit)
 export(SquareHinge)
 export(generateSim)
-export(load_image_file)
-export(load_label_file)
-export(show_digit)
 importFrom(Rcpp,sourceCpp)
-importFrom(grDevices,gray)
-importFrom(graphics,image)
 useDynLib(SSOSVM)

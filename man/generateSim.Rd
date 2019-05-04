@@ -2,13 +2,29 @@
 % Please edit documentation in R/Utility_functions.R
 \name{generateSim}
 \alias{generateSim}
-\title{TITLE}
+\title{Generate Simulations}
 \usage{
 generateSim(NN = 10^4, DELTA = 2, DIM = 2, seed = NULL)
 }
+\arguments{
+\item{NN}{Number of observations. Default is 10^4}
+
+\item{DELTA}{Separation of thre groups in standard errors. Default is 2.}
+
+\item{DIM}{Number of dimensions in data. Default is 2.}
+
+\item{seed}{Random seed if desired.}
+}
 \value{
-RETURNVAL
+A list containing:
+\item{XX}{Coordinates of the simulated points.}
+\item{YY}{Cluster membership of the simulated points.}
+\item{YMAT}{YY and XX Combined as a single matrix.}
 }
 \description{
-THIS FUNCTION DOES
+Generate simple simulations for testing of the algorithms.
+}
+\examples{
+#100 points of dimension 4.
+generateSim(NN=100, DELTA=2, DIM=4)
 }
