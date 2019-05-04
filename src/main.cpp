@@ -45,7 +45,7 @@ double omegaFun(arma::vec THETA,  arma::rowvec Yrow, double EPSILON ){
 //'\item{PSI}{Intermediate value PSI at each iteration (new point observed).}
 //'@examples
 //'YMAT <- generateSim(10^3,DIM=3)
-//'sq1<-SquareHinge(YMAT$YMAT, DIM=3, returnAll =T)
+//'sq1<-SquareHinge(YMAT$YMAT, DIM=3, returnAll=TRUE)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -149,7 +149,7 @@ Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, 
 //'\item{OMEGA}{Intermediate value OMEGA at each iteration (new point observed).}
 //'@examples
 //'YMAT <- generateSim(10^4)
-//'h1<-Hinge(YMAT$YMAT,returnAll =T)
+//'h1<-Hinge(YMAT$YMAT,returnAll=TRUE)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {
@@ -231,7 +231,7 @@ Rcpp::List Hinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, bool r
 //'\item{CHI}{Intermediate value CHI at each iteration (new point observed).}
 //'@examples
 //'YMAT <- generateSim(10^4)
-//'l1<-Logistic(YMAT$YMAT,returnAll =T)
+//'l1<-Logistic(YMAT$YMAT,returnAll=TRUE)
 //'@export
 // [[Rcpp::export]]
 Rcpp::List Logistic(arma::mat& YMAT, int DIM = 2, double EPSILON = 0.00001, bool returnAll = false, double rho=1.0) {

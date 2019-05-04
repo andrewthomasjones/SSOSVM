@@ -39,3 +39,43 @@ generateSim <- function(NN = 10^4, DELTA = 2, DIM = 2, seed=NULL) {
   
   return(list(XX=XX, YY=YY,YMAT=YMAT))
 }
+
+#'SSOSVM Fit function
+#'@description This is the primary function for uses to fit SVMs using this package.
+#'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
+#'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
+#'@param method Choice of function used in SVM. Choices are 'logistic', 'hinge' and 'squareHinge'. Default value is 'logistic"
+#'@param returnAll Return all of theta values? Boolean with default value FALSE.
+#'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0
+#'@return A list containing:
+#'\item{THETA}{SVM fit parameters.}
+#'\item{NN}{Number of observation points in YMAT.}
+#'\item{DIM}{Dimension of data.}
+#'\item{THETA_list}{THETA at each iteration (new point observed) as YMAT is fed into the algorithm one data point at a time.}
+#'\item{PSI,OMEGA,CHI}{Intermediate value for PSI, OMEGA, or CHI (depending on method choice) at each iteration (new point observed).}
+#'@examples
+#'Sim<- generateSim(10^4)
+#'m1<-SVMFit(Sim$YMAT)
+#'@export
+SVMFit<-function(YMAT, method = "logistic", EPSILON = 0.00001, returnAll = FALSE, rho=1.0) {
+  DIM <- ncol(YMAT)-1
+  results<-list()
+  
+  if(tolower(method)=="logistic"){
+    results<-Logistic(YMAT, DIM, EPSILON, returnAll, rho)
+  }
+  
+  if(tolower(method)=="hinge"){
+    results<-Hinge(YMAT, DIM, EPSILON, returnAll, rho)
+  }
+  
+  if(tolower(method)=="squarehinge"|tolower(method)=="square"){
+    results<-SquareHinge(YMAT, DIM, EPSILON, returnAll, rho)
+  }
+  
+  if(length(results)==0){
+    stop("No method selected.")
+  }
+  
+  return(results)
+}
