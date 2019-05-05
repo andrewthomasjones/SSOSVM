@@ -58,19 +58,33 @@ SSOSVM method:
 ``` r
 library(ggplot2)
 library(gganimate)
-goo <- ggplot(mtcars, aes(factor(cyl), mpg)) + 
-  geom_boxplot() + 
-  # Here comes the gganimate code
-  transition_states(
-    gear,
-    transition_length = 2,
-    state_length = 1
-  ) +
-  enter_fade() + 
-  exit_shrink() +
-  ease_aes('sine-in-out')
 
-anim_save("goo.gif", goo)
+#set up
+sims <- generateSim(10^2, DELTA=1)
+
+#fit using various loss functions
+sq1<-SVMFit(sims$YMAT,"square", returnAll = TRUE)
+h1<-SVMFit(sims$YMAT,"hinge", returnAll = TRUE)
+l1<-SVMFit(sims$YMAT,"logistic", returnAll = TRUE)
+
+#dataframe
+data<-data.frame(sample=1:10^2, 
+                 sims$YMAT,
+                 logistic=l1$THETA_list,
+                 square=sq1$THETA_list,
+                 hinge=h1$THETA_list
+                 )  
+
+#base plot
+plot<-ggplot(data, aes(colour=factor(YY), x=V2, y=V3))+ 
+  geom_point()+theme_bw()+xlab("X")+ylab("Y")+
+  guides(colour=FALSE)+geom_abline(aes(intercept=square.2, slope=square.2))
+
+example <- plot + transition_time(sample)+
+  labs(title =  "Sample: {frame_time}")+
+  shadow_mark(alpha = 1, size = 0.7, exclude_layer = 2)
+  
+anim_save("./inst/example.gif", example, fps=5)
 ```
 
-![](goo.gif)
+![](./inst/example.gif)
