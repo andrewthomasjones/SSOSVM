@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/SSOSVM)](https://cran.r-project.org/package=SSOSVM)
 [![Travis-CI Build Status](https://travis-ci.org/andrewthomasjones/SSOSVM.svg?branch=master)](https://travis-ci.org/andrewthomasjones/SSOSVM)
 [![DOI](https://zenodo.org/badge/112142150.svg)](https://zenodo.org/badge/latestdoi/112142150)
+
 # SSOSVM
 
 The goal of SSOSVM is to use R to allow batch and online training of soft-margin support vector machines (SVMs). The training of SVMs usually requires that the data be available all at once in a single batch, however the Stochastic majorization-minimization (SMM) algorithm framework allows for the training of SVMs on streamed data instead http://doi.org/10.1007/s42081-018-0001-y. This package utilizes the SMM framework to provide functions for training SVMs with hinge loss, squared-hinge loss, and logistic loss, functions.
