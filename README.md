@@ -12,9 +12,9 @@ soft-margin support vector machines (SVMs). The training of SVMs usually
 requires that the data be available all at once in a single batch,
 however the Stochastic majorization-minimization (SMM) algorithm
 framework allows for the training of SVMs on streamed data instead
-<doi:10.1007/s42081-018-0001-y>. This package utilizes the SMM framework
-to provide functions for training SVMs with hinge loss, squared-hinge
-loss, and logistic loss, functions. \#\# Installation
+<http://doi.org/10.1007/s42081-018-0001-y>. This package utilizes the
+SMM framework to provide functions for training SVMs with hinge loss,
+squared-hinge loss, and logistic loss, functions. \#\# Installation
 
 You can install SSOSVM from github with:
 

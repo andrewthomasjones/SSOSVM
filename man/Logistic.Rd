@@ -10,7 +10,7 @@ Logistic(YMAT, DIM = 2L, EPSILON = 1e-05, returnAll = FALSE,
 \arguments{
 \item{YMAT}{Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.}
 
-\item{DIM}{Dimesion of data. Default value is 2.}
+\item{DIM}{Dimension of data. Default value is 2.}
 
 \item{EPSILON}{Small perturbation value needed in calculation. Default value is 0.00001.}
 
