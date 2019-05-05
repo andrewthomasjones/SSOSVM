@@ -93,7 +93,7 @@ example <- plot + transition_time(sample)+
   shadow_mark(alpha = 1, size = 1, exclude_layer = 2)
 
 #save animation
-anim_save("./inst/example.gif", example, fps=5)
+anim_save("./inst/example.gif", example, fps=2.5)
 ```
 
 
