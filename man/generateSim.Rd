@@ -9,7 +9,7 @@ generateSim(NN = 10^4, DELTA = 2, DIM = 2, seed = NULL)
 \arguments{
 \item{NN}{Number of observations. Default is 10^4}
 
-\item{DELTA}{Separation of thre groups in standard errors. Default is 2.}
+\item{DELTA}{Separation of three groups in standard errors. Default is 2.}
 
 \item{DIM}{Number of dimensions in data. Default is 2.}
 

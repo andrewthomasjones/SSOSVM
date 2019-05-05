@@ -33,7 +33,7 @@ double omegaFun(arma::vec THETA,  arma::rowvec Yrow, double EPSILON ){
 //'Square Hinge
 //'@description Fit SVM with Square Hinge loss function.
 //'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
-//'@param DIM Dimesion of data. Default value is 2.
+//'@param DIM Dimension of data. Default value is 2.
 //'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
 //'@param returnAll Return all of theta values? Boolean with default value FALSE.
 //'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0
@@ -137,7 +137,7 @@ Rcpp::List SquareHinge(arma::mat& YMAT,  int DIM = 2, double EPSILON = 0.00001, 
 //'Hinge
 //'@description Fit SVM with Hinge loss function.
 //'@param YMAT Data. First column is -1 or 1 indicating the class of each observation. The remaining columns are the coordinates of the data points.
-//'@param DIM Dimesion of data. Default value is 2.
+//'@param DIM Dimension of data. Default value is 2.
 //'@param EPSILON Small perturbation value needed in calculation. Default value is 0.00001.
 //'@param returnAll Return all of theta values? Boolean with default value FALSE.
 //'@param rho Sensitivity factor to adjust the level of change in the SVM fit when a new observation is added. Default value 1.0

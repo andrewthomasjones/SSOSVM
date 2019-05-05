@@ -13,7 +13,7 @@ NULL
 #'Generate Simulations
 #'@description Generate simple simulations for testing of the algorithms.
 #'@param NN Number of observations. Default is 10^4
-#'@param DELTA Separation of thre groups in standard errors. Default is 2.
+#'@param DELTA Separation of three groups in standard errors. Default is 2.
 #'@param DIM Number of dimensions in data. Default is 2.
 #'@param seed Random seed if desired.
 #'@return A list containing:
