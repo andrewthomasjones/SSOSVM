@@ -7,3 +7,4 @@ test.R
 ^cran-comments\.md$
 ^.*.png
 ^.*.webm
+^CRAN-RELEASE$
