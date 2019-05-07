@@ -4,7 +4,7 @@
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SSOSVM)](https://cran.r-project.org/package=SSOSVM)
 [![Travis-CI Build
 Status](https://travis-ci.org/andrewthomasjones/SSOSVM.svg?branch=master)](https://travis-ci.org/andrewthomasjones/SSOSVM)
-[![DOI](https://zenodo.org/badge/112142150.svg)](https://zenodo.org/badge/latestdoi/112142150)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2669916.svg)](https://doi.org/10.5281/zenodo.2669916)
 
 # SSOSVM
 
