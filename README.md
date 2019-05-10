@@ -99,3 +99,19 @@ anim_save("./inst/example.gif", example, fps=2.5)
 ```
 
 ![](./inst/example.gif)
+
+## Authorship statement
+
+The `SSOSVM` package is co-authored by [Andrew T.
+Jones](https://github.com/andrewthomasjones) and [Hien D.
+Nguyen](https://github.com/hiendn).
+
+## Bug reporting and contributions
+
+Thank you for your interest in `SSOSVM`. If you happen to find any bugs
+in the program, then please report them on the Issues page
+(<https://github.com/andrewthomasjones/SSOSVM/issues>). Support can also
+be sought on this page. Furthermore, if you would like to make a
+contribution to the software, then please forward a pull request to the
+owner of the repository.
+
