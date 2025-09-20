@@ -1,16 +1,15 @@
 Package: SSOSVM
 Type: Package
 Title: Stream Suitable Online Support Vector Machines
-Version: 0.2.1
-Date: 2019-05-06
+Version: 0.2.2
+Date: 2025-09-20
 Author: Andrew Thomas Jones, Hien Duy Nguyen,  Geoffrey J. McLachlan
 Maintainer: Andrew Thomas Jones <andrewthomasjones@gmail.com>
 Description: Soft-margin support vector machines (SVMs) are a common class of classification models. The training of SVMs usually requires that the data be available all at once in a single batch, however the Stochastic majorization-minimization (SMM) algorithm framework allows for the training of SVMs on streamed data instead Nguyen, Jones & McLachlan(2018)<doi:10.1007/s42081-018-0001-y>. This package utilizes the SMM framework to provide functions for training SVMs with hinge loss, squared-hinge loss, and logistic loss.
 License: GPL-3
 Encoding: UTF-8
 Imports: Rcpp (>= 0.12.13),
-    mvtnorm,
-    MASS
+    mvtnorm
 LinkingTo: Rcpp,
     RcppArmadillo
 RoxygenNote: 6.1.1
