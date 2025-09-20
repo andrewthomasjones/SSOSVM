@@ -1,10 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SSOSVM)](https://cran.r-project.org/package=SSOSVM)
-[![Travis-CI Build
-Status](https://travis-ci.org/andrewthomasjones/SSOSVM.svg?branch=master)](https://travis-ci.org/andrewthomasjones/SSOSVM)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2669916.svg)](https://doi.org/10.5281/zenodo.2669916)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/SSOSVM)](https://cran.r-project.org/package=SSOSVM)
+[![DOI](https://zenodo.org/badge/112142150.svg)](https://zenodo.org/badge/latestdoi/112142150)
 
 # SSOSVM
 
@@ -34,6 +32,7 @@ Here is a very simple example using simulated data:
 #setup
 library(SSOSVM)
 library(ggplot2)
+#> Warning: package 'ggplot2' was built under R version 4.4.1
 
 #simulations
 sims <- generateSim(100, DELTA=3)
@@ -46,6 +45,11 @@ l1<-SVMFit(sims$YMAT,"logistic")
 #plot results
 plot<-ggplot(data.frame(sims$YMAT), aes(colour=factor(YY), x=V2, y=V3))
 plot<-plot+geom_point()+theme_bw()+xlab("X")+ylab("Y")+guides(colour=FALSE)
+#> Warning: The `<scale>` argument of `guides()` cannot be `FALSE`. Use "none" instead as
+#> of ggplot2 3.3.4.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 plot<-plot+geom_abline(intercept=sq1$THETA[1],
                        slope=sq1$THETA[2]/sq1$THETA[3], colour="blue")
 plot<-plot+geom_abline(intercept=h1$THETA[1],
@@ -55,7 +59,7 @@ plot<-plot+geom_abline(intercept=l1$THETA[1],
 plot
 ```
 
-![](README-unnamed-chunk-2-1.png)<!-- -->
+![](README-fig1-1.png)<!-- -->
 
 ## Animated figures
 
@@ -99,19 +103,3 @@ anim_save("./inst/example.gif", example, fps=2.5)
 ```
 
 ![](./inst/example.gif)
-
-## Authorship statement
-
-The `SSOSVM` package is co-authored by [Andrew T.
-Jones](https://github.com/andrewthomasjones) and [Hien D.
-Nguyen](https://github.com/hiendn).
-
-## Bug reporting and contributions
-
-Thank you for your interest in `SSOSVM`. If you happen to find any bugs
-in the program, then please report them on the Issues page
-(<https://github.com/andrewthomasjones/SSOSVM/issues>). Support can also
-be sought on this page. Furthermore, if you would like to make a
-contribution to the software, then please forward a pull request to the
-owner of the repository.
-

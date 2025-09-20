@@ -31,7 +31,7 @@ devtools::install_github("andrewthomasjones/SSOSVM")
 
 Here is a very simple example using simulated data:
 
-```{r, fig.show=TRUE, fig.width=5, fig.height=4}
+```{r fig1, fig.show=TRUE, fig.width=5, fig.height=4}
 #setup
 library(SSOSVM)
 library(ggplot2)
