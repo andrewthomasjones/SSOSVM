@@ -8,3 +8,4 @@ test.R
 ^.*.png
 ^.*.webm
 ^CRAN-RELEASE$
+.github/*
