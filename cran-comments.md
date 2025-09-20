@@ -1,14 +1,9 @@
 ## Test environments
-* local OS X install, R 3.4.4
-* ubuntu 12.04 (on travis-ci), R 3.4.4
-* win-builder (devel and release)
+* macos-13 on GitHub, R-* via rhub
+* windows-latest on GitHub, R-* via rhub
+* ubuntu-latest on GitHub, R-* via rhub
 
 ## R CMD check results
+There were no ERRORs or WARNINGs. 
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release (resubmission)
-
-## Reverse dependencies
-
-This is a new release, so there are no reverse dependencies.
+There were no NOTEs.
